@@ -154,6 +154,7 @@ void criptare(BMP_image *img, unsigned int *aleatoare, char *secret_key)
 	fscanf(fin, "%u", &SV);
 
 	int i;
+	
 	img->vector_valori[0].b = SV ^ img->vector_valori[0].b ^ aleatoare[img->inaltime*img->latime - 1];
 	img->vector_valori[0].g = (SV >> 8) ^ img->vector_valori[0].g ^ (aleatoare[img->inaltime*img->latime - 1] >> 8);
 	img->vector_valori[0].r = (SV >> 16) ^ img->vector_valori[0].r ^ (aleatoare[img->inaltime*img->latime - 1] >> 16);
